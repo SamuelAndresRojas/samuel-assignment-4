@@ -1,5 +1,4 @@
 
-
 public class Student implements Comparable<Student> {
 
 	private String studentID;
@@ -46,10 +45,10 @@ public class Student implements Comparable<Student> {
 		this.grade = grade;
 	}
 
-//	@Override
-//	public String toString() {
-//		return studentID + ", " + studentName + ", " + course + ", " + grade;
-//	}
+	@Override
+	public String toString() {
+		return studentID + ", " + studentName + ", " + course + ", " + grade;
+	}
 
 	@Override
 	public int compareTo(Student that) {

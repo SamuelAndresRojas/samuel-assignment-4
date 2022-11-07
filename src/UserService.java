@@ -15,16 +15,16 @@ public class UserService {
 		Student[] apmthStudents = new Student[33];
 
 		try (BufferedReader fileReader = new BufferedReader(new FileReader("MasterFile.txt"));
-				BufferedWriter bw1 = new BufferedWriter(new FileWriter("course1.txt"));
-				BufferedWriter bw2 = new BufferedWriter(new FileWriter("course2.txt"));
-				BufferedWriter bw3 = new BufferedWriter(new FileWriter("course3.txt"))) {
+				BufferedWriter course1 = new BufferedWriter(new FileWriter("course1.txt"));
+				BufferedWriter course2 = new BufferedWriter(new FileWriter("course2.txt"));
+				BufferedWriter course3 = new BufferedWriter(new FileWriter("course3.txt"))) {
 			int i = 0;
 			String line = null;
 			Student[] students = new Student[101];
 
 			while ((line = fileReader.readLine()) != null) {
-				String[] lineData = line.split(",");
-				Student student = new Student(lineData[0], lineData[1], lineData[2], lineData[3]);
+				String[] data = line.split(",");
+				Student student = new Student(data[0], data[1], data[2], data[3]);
 				students[i] = student;
 				i++;
 			}
@@ -49,29 +49,29 @@ public class UserService {
 				}
 			}
 			Arrays.sort(compSciStudents);
-			bw1.write("Student ID,Student Name,Course,Grade \n");
+			course1.write("Student ID,Student Name,Course,Grade \n");
 			for (Student student : compSciStudents) {
-				bw1.write(student.getStudentID() + ",");
-				bw1.write(student.getStudentName() + ",");
-				bw1.write(student.getCourse() + ",");
-				bw1.write(student.getGrade() + "\n");
+				course1.write(student.getStudentID() + ",");
+				course1.write(student.getStudentName() + ",");
+				course1.write(student.getCourse() + ",");
+				course1.write(student.getGrade() + "\n");
 
 			}
 			Arrays.sort(statStudents);
-			bw2.write("Student ID,Student Name,Course,Grade \n");
+			course2.write("Student ID,Student Name,Course,Grade \n");
 			for (Student student : statStudents) {
-				bw2.write(student.getStudentID() + ",");
-				bw2.write(student.getStudentName() + ",");
-				bw2.write(student.getCourse() + ",");
-				bw2.write(student.getGrade() + "\n");
+				course2.write(student.getStudentID() + ",");
+				course2.write(student.getStudentName() + ",");
+				course2.write(student.getCourse() + ",");
+				course2.write(student.getGrade() + "\n");
 			}
 			Arrays.sort(apmthStudents);
-			bw3.write("Student ID,Student Name,Course,Grade \n");
+			course3.write("Student ID,Student Name,Course,Grade \n");
 			for (Student student : apmthStudents) {
-				bw3.write(student.getStudentID() + ",");
-				bw3.write(student.getStudentName() + ",");
-				bw3.write(student.getCourse() + ",");
-				bw3.write(student.getGrade() + "\n");
+				course3.write(student.getStudentID() + ",");
+				course3.write(student.getStudentName() + ",");
+				course3.write(student.getCourse() + ",");
+				course3.write(student.getGrade() + "\n");
 			}
 			return students;
 

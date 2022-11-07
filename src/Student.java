@@ -45,12 +45,10 @@ public class Student implements Comparable<Student> {
 		this.grade = grade;
 	}
 
-	@Override
 	public String toString() {
 		return studentID + ", " + studentName + ", " + course + ", " + grade;
 	}
 
-	@Override
 	public int compareTo(Student that) {
 		return that.grade.compareTo(this.grade);
 	}

@@ -15,9 +15,9 @@ public class UserService {
 		Student[] apmthStudents = new Student[33];
 
 		try (BufferedReader fileReader = new BufferedReader(new FileReader("MasterFile.txt"));
-				BufferedWriter course1 = new BufferedWriter(new FileWriter("course1.txt"));
-				BufferedWriter course2 = new BufferedWriter(new FileWriter("course2.txt"));
-				BufferedWriter course3 = new BufferedWriter(new FileWriter("course3.txt"))) {
+				BufferedWriter course1 = new BufferedWriter(new FileWriter("course1.csv"));
+				BufferedWriter course2 = new BufferedWriter(new FileWriter("course2.csv"));
+				BufferedWriter course3 = new BufferedWriter(new FileWriter("course3.csv"))) {
 			int i = 0;
 			String line = null;
 			Student[] students = new Student[101];
